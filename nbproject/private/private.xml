@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/ThreadManagers/ThreadableObject.java</file>
-            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/ThreadManagers/GameThread.java</file>
-            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/InputKey.java</file>
-            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/ThreadManagers/ThreadManager.java</file>
-            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/InputManager.java</file>
+            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/Engine/Graphic/GraphicalDisplay.java</file>
             <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/gradius_1/Main.java</file>
+            <file>file:/C:/Users/Notebook/Documents/Lucas/NetBeans%20Projects/Gradius_1/src/Engine/Graphic/GraphicalRenderer.java</file>
         </group>
     </open-files>
 </project-private>

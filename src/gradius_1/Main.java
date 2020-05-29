@@ -42,13 +42,13 @@ public class Main implements ThreadableObject {
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setVisible(true);*/
         
-        new GraphicalDisplay();
+        GraphicalDisplay display = new GraphicalDisplay();
     }
     
     private void TestingStuff(){
         ThreadManager tm = new ThreadManager();
         tm.AddThread(new ThreadableObject[]{this});
-        tm.startThread();
+        //tm.startThread();
     }
 
     @Override

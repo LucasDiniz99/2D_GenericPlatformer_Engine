@@ -6,24 +6,34 @@
 package Engine.Graphic;
 
 import Engine.Threads.ThreadableObject;
+import java.awt.Component;
+import java.awt.Image;
+
 import javax.swing.*;
 /**
  *
  * @author Notebook
  */
 public class GraphicalDisplay extends javax.swing.JFrame implements ThreadableObject {
-
+    
+    GraphicalRenderer renderer;
+    
     /**
      * Creates new form GraphicalDisplay
      */
     public GraphicalDisplay() {
         initComponents();
-        SetupWindow();
+        //SetupWindow();
+        //System.out.println("instantiated ...");
     }
     
     public synchronized void SetupWindow(){
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        renderer = new GraphicalRenderer();
+        renderer.setSize(this.getSize());
+        renderer.setVisible(true);
+        this.add(renderer);
+        this.pack();
     }
 
     /**
@@ -35,36 +45,36 @@ public class GraphicalDisplay extends javax.swing.JFrame implements ThreadableOb
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DrawCanvas = new javax.swing.JPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1366, 768));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         setName("MainFrame"); // NOI18N
-
-        javax.swing.GroupLayout DrawCanvasLayout = new javax.swing.GroupLayout(DrawCanvas);
-        DrawCanvas.setLayout(DrawCanvasLayout);
-        DrawCanvasLayout.setHorizontalGroup(
-            DrawCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        DrawCanvasLayout.setVerticalGroup(
-            DrawCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DrawCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DrawCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        if(!this.isVisible())
+            SetupWindow();
+    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
@@ -101,12 +111,18 @@ public class GraphicalDisplay extends javax.swing.JFrame implements ThreadableOb
         });
     }
 
+    // START OF THE CODE -------------------------------------------------------
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DrawCanvas;
     // End of variables declaration//GEN-END:variables
 
+    
+    
     @Override
     public void runThread() {
+        if(!this.isVisible())
+            return;
+        
         
     }
 
